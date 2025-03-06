@@ -1,6 +1,17 @@
-
 <div>
-<h1>Welcome to {{ title }}</h1>
-</div>
-<!-- ✅ Display Logo using Property Binding -->
-<img [src]="imagePath" (click)="onClick($event)" alt="The BridgeLabz logo: a Bridge to Employement through a Lab Works." width="200" style="cursor: pointer;">
+    <h1>Welcome to {{ title }}</h1>
+    
+    <!-- ✅ Input field for user name -->
+    <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+  
+    <!-- ✅ Dynamically display the message -->
+    <h2 *ngIf="userName">Hello from BridgeLabz, {{ userName }}!</h2>
+  </div>
+  
+  <!-- ✅ Display Logo using Property Binding -->
+  <img [src]="imagePath" 
+       (click)="onClick($event)" 
+       alt="The BridgeLabz logo: a Bridge to Employment through a Lab Works."
+       width="200"
+       style="cursor: pointer;">
+  
