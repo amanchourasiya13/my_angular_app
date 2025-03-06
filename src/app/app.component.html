@@ -1,11 +1,14 @@
 <div>
     <h1>Welcome to {{ title }}</h1>
-    
-    <!-- ✅ Input field for user name -->
-    <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
   
-    <!-- ✅ Dynamically display the message -->
-    <h2 *ngIf="userName">Hello from BridgeLabz, {{ userName }}!</h2>
+    <!-- ✅ Input field for user name with (input) event -->
+    <input type="text" [(ngModel)]="userName" (input)="onInput()" placeholder="Enter your name" />
+  
+    <!-- ✅ Show error message if validation fails -->
+    <span *ngIf="nameError" class="error-output" style="color: red;">{{ nameError }}</span>
+  
+    <!-- ✅ Display greeting only if the name is valid -->
+    <h2 *ngIf="userName && !nameError">Hello from BridgeLabz, {{ userName }}!</h2>
   </div>
   
   <!-- ✅ Display Logo using Property Binding -->
