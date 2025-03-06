@@ -3,4 +3,4 @@
 <h1>Welcome to {{ title }}</h1>
 </div>
 <!-- ✅ Display Logo using Property Binding -->
-<img [src]="imagePath" alt="The BridgeLabz logo: a Bridge to Employement through a Lab Works." width="200">
+<img [src]="imagePath" (click)="onClick($event)" alt="The BridgeLabz logo: a Bridge to Employement through a Lab Works." width="200" style="cursor: pointer;">

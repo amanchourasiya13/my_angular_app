@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +11,16 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title="BridgeLabz";
   imagePath = 'assets/Logo.png';
+  url="https://www.Bridgelabz.com";
+
+  ngOnInit():void{
+    this.title="Hello from BridgeLabz.";
+  }
+
+  onClick(event:MouseEvent):void{
+    console.log("Save button is clicked!",event);
+    window.open(this.url,"_blank");
+  }
+
 }
 
