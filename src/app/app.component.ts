@@ -13,8 +13,8 @@ export class AppComponent {
   title = "BridgeLabz";
   imagePath = 'assets/Logo.png';
   url = "https://www.Bridgelabz.com";
-  userName: string = "";
-  nameError: string = "";  // ✅ Add missing property
+  userName: string = ""; // User input name
+  nameError: string = ""; // Error message
 
   ngOnInit(): void {
     this.title = "Hello from BridgeLabz.";
@@ -25,13 +25,16 @@ export class AppComponent {
     window.open(this.url, "_blank");
   }
 
-  onInput(): void {  // ✅ Removed $event (not needed for ngModel binding)
+  onInput(): void {  
     console.log("Change Event Occurred!", this.userName);
-    const nameRegex = /^[A-Z][a-zA-Z\s]{2,}$/; // ✅ Fixed regex (Capital 1st letter & min 3 chars)
+    
+    // ✅ Regex: Starts with uppercase letter, followed by at least 2 letters
+    const nameRegex = /^[A-Z][a-zA-Z\s]{2,}$/;  
+
     if (nameRegex.test(this.userName)) {
-      this.nameError = "";
+      this.nameError = "";  // ✅ No error if input is valid
     } else {
-      this.nameError = "Name is incorrect! Start with capital & use at least 3 letters,use only letters.";
+      this.nameError = "Invalid name! Start with uppercase & min 3 letters.";
     }
   }
 }
